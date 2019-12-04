@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/yellow"
+    android:background="#333C46"
     android:orientation="vertical"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
@@ -19,7 +19,7 @@
         android:paddingTop="70dp"
         android:paddingBottom="60dp"
         android:text="@string/loginText"
-        android:textColor="@color/common_google_signin_btn_text_light_focused"
+        android:textColor="#B9BBBD"
         android:textSize="40sp"
         tools:text="Welcome to onRoad!" />
 
@@ -30,12 +30,12 @@
         android:layout_height="wrap_content"
         android:paddingBottom="10dp"
         android:text="@string/please_register_with_us_to_continue"
-        android:textColor="@color/common_google_signin_btn_text_light_focused" />
+        android:textColor="#B9BBBD" />
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColorHint="@color/common_google_signin_btn_text_light">
+        android:textColorHint="#B9BBBD">
 
         <AutoCompleteTextView
             android:id="@+id/register_username"
@@ -45,8 +45,8 @@
             android:imeOptions="actionNext"
             android:inputType="textNoSuggestions"
             android:maxLines="1"
-            android:textColor="@color/black"
-            android:textColorHint="@color/white"
+            android:textColor="#B9BBBD"
+            android:textColorHint="#B9BBBD"
             android:textIsSelectable="false"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -56,7 +56,7 @@
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColorHint="@color/common_google_signin_btn_text_light">
+        android:textColorHint="#B9BBBD">
 
         <AutoCompleteTextView
             android:id="@+id/register_userContactNumber"
@@ -66,8 +66,8 @@
             android:imeOptions="actionNext"
             android:inputType="textNoSuggestions"
             android:maxLines="1"
-            android:textColor="@color/black"
-            android:textColorHint="@color/white"
+            android:textColor="#B9BBBD"
+            android:textColorHint="#B9BBBD"
             android:textIsSelectable="false"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -77,7 +77,7 @@
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColorHint="@color/common_google_signin_btn_text_light">
+        android:textColorHint="#B9BBBD">
 
         <AutoCompleteTextView
             android:id="@+id/register_email"
@@ -87,8 +87,8 @@
             android:imeOptions="actionNext"
             android:inputType="textEmailAddress"
             android:maxLines="1"
-            android:textColor="@color/black"
-            android:textColorHint="@color/white"
+            android:textColor="#B9BBBD"
+            android:textColorHint="#B9BBBD"
             android:textIsSelectable="false"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -98,7 +98,7 @@
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColorHint="@color/common_google_signin_btn_text_light">
+        android:textColorHint="#B9BBBD">
 
         <EditText
             android:id="@+id/register_password"
@@ -108,8 +108,8 @@
             android:imeOptions="actionNext"
             android:inputType="textPassword"
             android:maxLines="1"
-            android:textColor="@color/black"
-            android:textColorHint="@color/white"
+            android:textColor="#B9BBBD"
+            android:textColorHint="#B9BBBD"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -118,7 +118,7 @@
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColorHint="@color/common_google_signin_btn_text_light">
+        android:textColorHint="#B9BBBD">
 
         <EditText
             android:id="@+id/register_confirm_password"
@@ -130,8 +130,8 @@
             android:imeOptions="actionUnspecified"
             android:inputType="textPassword"
             android:maxLines="1"
-            android:textColor="@color/black"
-            android:textColorHint="@color/white"
+            android:textColor="#B9BBBD"
+            android:textColorHint="#B9BBBD"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -147,7 +147,7 @@
         android:background="@color/logingrey"
         android:onClick="signUp"
         android:text="@string/action_sign_up"
-        android:textColor="@color/white"
+        android:textColor="#B9BBBD"
         android:textSize="14sp" />
 
     <Button
@@ -156,10 +156,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:background="@color/white"
+        android:background="@color/logingrey"
         android:onClick="SignInUser"
         android:text="@string/action_sign_in_short"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textColor="#B9BBBD"
         android:textSize="14sp" />
 
 

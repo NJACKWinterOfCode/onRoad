@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -24,13 +25,23 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bdp.onroad.LoginActivity;
+import com.firebase.ui.auth.AuthUI;
+import com.firebase.ui.auth.IdpResponse;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import java.util.Arrays;
+import java.util.List;
 
 
 public class UserTypeActivity extends BaseActivity {
+
+    List<AuthUI.IdpConfig> providers;
+    private final static int MyReqCode=2;
+    FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +50,40 @@ public class UserTypeActivity extends BaseActivity {
         //inflate your activity layout here!
         View contentView = inflater.inflate(R.layout.activity_usertype, null, false);
         dl.addView(contentView, 0);
+
+        providers = Arrays.asList(
+                new AuthUI.IdpConfig.EmailBuilder().build(),
+                new AuthUI.IdpConfig.GoogleBuilder().build(),
+                new AuthUI.IdpConfig.FacebookBuilder().build()
+        );
+        showSignInOptions();
+
     }
+    public void showSignInOptions(){
 
+        startActivityForResult(
 
+                AuthUI.getInstance().createSignInIntentBuilder()
+                        .setAvailableProviders(providers)
+                        .setTheme(R.style.MyTheme)
+                        .build(),MyReqCode
+        );
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == MyReqCode){
+            IdpResponse response = IdpResponse.fromResultIntent(data);
+            if(resultCode == RESULT_OK){
+                FirebaseUser user = firebaseAuth.getInstance().getCurrentUser();
+                Toast.makeText(UserTypeActivity.this, "Hi " + user.getDisplayName(), Toast.LENGTH_SHORT).show();
+            }
+            else{
+                Toast.makeText(UserTypeActivity.this, ""+response.getError(), Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
     public void setUserDriver(View V)
     {
         Intent intnt = new Intent(UserTypeActivity.this, UserDriverActivity.class);

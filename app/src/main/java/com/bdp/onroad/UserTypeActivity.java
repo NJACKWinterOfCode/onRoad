@@ -39,10 +39,6 @@ import java.util.List;
 
 public class UserTypeActivity extends BaseActivity {
 
-    List<AuthUI.IdpConfig> providers;
-    private final static int MyReqCode=2;
-    FirebaseAuth firebaseAuth;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,39 +46,6 @@ public class UserTypeActivity extends BaseActivity {
         //inflate your activity layout here!
         View contentView = inflater.inflate(R.layout.activity_usertype, null, false);
         dl.addView(contentView, 0);
-
-        providers = Arrays.asList(
-                new AuthUI.IdpConfig.EmailBuilder().build(),
-                new AuthUI.IdpConfig.GoogleBuilder().build(),
-                new AuthUI.IdpConfig.FacebookBuilder().build()
-        );
-        showSignInOptions();
-
-    }
-    public void showSignInOptions(){
-
-        startActivityForResult(
-
-                AuthUI.getInstance().createSignInIntentBuilder()
-                        .setAvailableProviders(providers)
-                        .setTheme(R.style.MyTheme)
-                        .build(),MyReqCode
-        );
-    }
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if(requestCode == MyReqCode){
-            IdpResponse response = IdpResponse.fromResultIntent(data);
-            if(resultCode == RESULT_OK){
-                FirebaseUser user = firebaseAuth.getInstance().getCurrentUser();
-                Toast.makeText(UserTypeActivity.this, "Hi " + user.getDisplayName(), Toast.LENGTH_SHORT).show();
-            }
-            else{
-                Toast.makeText(UserTypeActivity.this, ""+response.getError(), Toast.LENGTH_SHORT).show();
-            }
-        }
     }
     public void setUserDriver(View V)
     {

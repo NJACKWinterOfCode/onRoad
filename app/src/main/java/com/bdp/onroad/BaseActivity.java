@@ -75,8 +75,7 @@ public class BaseActivity extends AppCompatActivity {
                         finish();
                         break;
                     case R.id.nav_profile:
-                        Toast.makeText(BaseActivity.this, "Profile", Toast.LENGTH_SHORT).show();
-                        break;
+                        startActivity(new Intent(BaseActivity.this, profileActivity.class));                            break;
                     case R.id.nav_rides:
                         startActivity(new Intent(BaseActivity.this, activity_HikeSearch.class));
                         finish();

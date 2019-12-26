@@ -112,7 +112,7 @@ public class BaseActivity extends AppCompatActivity {
                 new AuthUI.IdpConfig.GoogleBuilder().build(),
                 new AuthUI.IdpConfig.FacebookBuilder().build()
         );
-        showSignInOptions();
+      //  showSignInOptions();
 
     }
     public void showSignInOptions(){

@@ -9,8 +9,8 @@
 
 <br>
 
-An App to find and share rides (and thus, reduce cost, reduce pollution and also traffic)
-Aim of the app is to provide rides to passengers in private or public cars at reduced costs, depenbding on the availability.
+An App to find and share rides (and thus, reduce cost, reduce pollution and also traffic).
+Aim of the app is to provide rides to passengers in private or public cars at reduced costs, depending on the availability.
 
 <br>
 
@@ -32,9 +32,9 @@ Aim of the app is to provide rides to passengers in private or public cars at re
 ## Contributions 
 
 * Contributors are welcome and please comment on the issue before working on it.
-* Create pull requests, submit bugs, suggest new features.
-* Join the Gitter Channel for queries and other related stuff.
-* Add your app to firebase. The steps can be found [here](https://firebase.google.com/docs/database/android/start)
+* Create pull requests, submit [bugs](https://github.com/NJACKWinterOfCode/onRoad/issues/new), suggest [new features](https://github.com/NJACKWinterOfCode/onRoad/issues/new).
+* Join the [Gitter-Channel](https://gitter.im/On-Road/community) for queries and other related stuff.
+* Add your app to firebase. The steps can be found [here](https://firebase.google.com/docs/database/android/start).
 * In the second step you will be prompted to download ```google-services.json```. Replace the ```google-services.json``` in the current directory with the new downloaded file. 
 
 
